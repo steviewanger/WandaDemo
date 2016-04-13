@@ -8,34 +8,41 @@
 
 import Foundation
 
+protocol HealthServiceDelegate {
+    func getHealthPageSuccess(page: HealthPage)
+    func getHealthPageFailure(error: NSError)
+}
+
 class HealthServices {
-    private static let BASE_URL = "https://interview.wandalive.com/api/patient_app/measurement"
-    private static let auth = "32bbf158962c1279fbd0f3ce1b4b0fab3734a966"
+    private let BASE_URL = "https://interview.wandalive.com/api/patient_app/measurement"
+    private let auth = "32bbf158962c1279fbd0f3ce1b4b0fab3734a966"
     
-    class func getHeartRate(successBlock: (page: HealthPage) -> (), errorBlock: (error: NSError) -> ()) {
-        let url = "\(BASE_URL)/?measurement_type=weight"
-        getHeartRate(url, successBlock: successBlock, errorBlock: errorBlock)
-        
+    var delegate: HealthServiceDelegate!
+    
+    func getHeartRate() {
+        let url = "\(BASE_URL)/?measurement_type=heart_rate"
+        getPage(url)
     }
     
-    class func getHeartRate(url: String, successBlock: (page: HealthPage) -> (), errorBlock: (error: NSError) -> ()) {
+    func getBodyWeight() {
+        let url = "\(BASE_URL)/?measurement_type=weight"
+        getPage(url)
+    }
+
+    func getPage(url: String) {
         let completion = { (success: Bool, json: [String: AnyObject]) in
             if success {
-                successBlock(page: HealthPage(json: json))
+                self.delegate.getHealthPageSuccess(HealthPage(json: json))
             }
             else {
-                errorBlock(error: NSError(domain: "Could not complete request", code: 0, userInfo: nil))
+                self.delegate.getHealthPageFailure(NSError(domain: "Could not complete request", code: 0, userInfo: nil))
             }
         }
         
         getRequest(NSURL(string: url)!, params: nil, completion: completion)
     }
-
-    class func getBodyWeight() {
-        
-    }
     
-    class private func getRequest(URL: NSURL, params: [String: String]?, completion: (success: Bool, json: [String: AnyObject]) -> ()) {
+    private func getRequest(URL: NSURL, params: [String: String]?, completion: (success: Bool, json: [String: AnyObject]) -> ()) {
         let request = NSMutableURLRequest(URL: URL)
         request.HTTPMethod = "GET"
         

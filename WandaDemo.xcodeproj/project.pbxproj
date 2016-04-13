@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		213202D873A211E76F6D3066 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211CB6D57E8D111522896A7C /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		E8DC62341CBD9A3300C229CC /* BodyWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DC622F1CBD9A3300C229CC /* BodyWeight.swift */; };
-		E8DC62351CBD9A3300C229CC /* HeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DC62301CBD9A3300C229CC /* HeartRate.swift */; };
 		E8DC62361CBD9A3300C229CC /* HealthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DC62321CBD9A3300C229CC /* HealthServices.swift */; };
 		E8DC62371CBD9A3300C229CC /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DC62331CBD9A3300C229CC /* UserServices.swift */; };
 		E8DC62391CBD9A3F00C229CC /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DC62381CBD9A3F00C229CC /* KeychainWrapper.swift */; };
@@ -38,8 +36,6 @@
 		211CB6D57E8D111522896A7C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62BBC9173F768E7B8CD41FA4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C64635235755B61EDF72D4AC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		E8DC622F1CBD9A3300C229CC /* BodyWeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyWeight.swift; sourceTree = "<group>"; };
-		E8DC62301CBD9A3300C229CC /* HeartRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRate.swift; sourceTree = "<group>"; };
 		E8DC62321CBD9A3300C229CC /* HealthServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthServices.swift; sourceTree = "<group>"; };
 		E8DC62331CBD9A3300C229CC /* UserServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
 		E8DC62381CBD9A3F00C229CC /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = SOURCE_ROOT; };
@@ -97,8 +93,6 @@
 		E8DC622E1CBD9A3300C229CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E8DC622F1CBD9A3300C229CC /* BodyWeight.swift */,
-				E8DC62301CBD9A3300C229CC /* HeartRate.swift */,
 				E8DC623A1CBDB8A400C229CC /* HealthData.swift */,
 				E8DC623C1CBDB90D00C229CC /* HealthPage.swift */,
 			);
@@ -312,10 +306,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8DC62341CBD9A3300C229CC /* BodyWeight.swift in Sources */,
 				E8F09C1D1CBD970F00C9F335 /* ViewController.swift in Sources */,
 				E8DC623D1CBDB90D00C229CC /* HealthPage.swift in Sources */,
-				E8DC62351CBD9A3300C229CC /* HeartRate.swift in Sources */,
 				E8DC623B1CBDB8A400C229CC /* HealthData.swift in Sources */,
 				E8DC623F1CBDC11800C229CC /* HelperFunctions.swift in Sources */,
 				E8DC62391CBD9A3F00C229CC /* KeychainWrapper.swift in Sources */,
